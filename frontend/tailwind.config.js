@@ -8,21 +8,26 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['IBM Plex Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                serif: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+                sans: ['Bricolage Grotesque', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                display: ['Bricolage Grotesque', 'ui-sans-serif', 'system-ui', 'sans-serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
-                sm: 'calc(var(--radius) - 4px)',
+                md: 'calc(var(--radius) - 4px)',
+                sm: 'calc(var(--radius) - 8px)',
+                '2xl': '1.25rem',
+                '3xl': '1.75rem',
             },
             colors: {
-                paper: '#F6F5F1',
-                cream: '#EEECE4',
-                ink: '#17161A',
-                graphite: '#57555C',
-                mute: '#8A878E',
-                terracotta: '#95452A',
+                paper: '#FFFFFF',
+                bone: '#F6F5F1',
+                stone: '#EDEBE4',
+                ink: '#0A0A0B',
+                graphite: '#4A4A50',
+                mute: '#8A8A90',
+                coral: '#FF6A3D',
+                'coral-dark': '#E5542A',
+                lime: '#DFF16B',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {

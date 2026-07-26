@@ -14,26 +14,21 @@ export const NewsFeed = () => {
         <section
             id="news"
             data-testid="news-feed-section"
-            className="border-b border-ink/15"
+            className="border-b border-ink/10"
         >
-            {/* Section head */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-ink/15">
-                <div className="lg:col-span-4 px-6 sm:px-10 lg:px-14 py-14 lg:border-r border-ink/15">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-terracotta">
-                        Section II — Dispatches
-                    </span>
-                    <h2 className="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1] tracking-tight text-ink">
-                        The world, <br />
-                        <em className="italic font-light">from a desk near you.</em>
-                    </h2>
-                    <p className="mt-6 font-sans text-base font-light text-graphite leading-relaxed max-w-md">
-                        Curated updates on policy, real estate, community and
-                        infrastructure — the four things a remote worker actually
-                        needs to know about a country.
-                    </p>
-                </div>
+            <div className="max-w-[1400px] mx-auto px-6 sm:px-10 py-16 lg:py-24">
+                {/* Head */}
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+                    <div>
+                        <h2 className="font-serif text-3xl sm:text-4xl leading-tight tracking-tight text-ink font-normal">
+                            Latest dispatches
+                        </h2>
+                        <p className="mt-3 text-base text-graphite max-w-lg">
+                            Policy, real estate, community and infrastructure — the four things a
+                            remote worker actually needs to know about a country.
+                        </p>
+                    </div>
 
-                <div className="lg:col-span-8 px-6 sm:px-10 lg:px-14 py-10 flex items-end">
                     <div
                         data-testid="news-region-filters"
                         className="flex flex-wrap gap-2"
@@ -45,10 +40,10 @@ export const NewsFeed = () => {
                                     key={r}
                                     onClick={() => setRegion(r)}
                                     data-testid={`filter-region-${r.toLowerCase().replace(/\s+/g, "-")}`}
-                                    className={`px-4 py-2 border font-mono text-[11px] uppercase tracking-[0.22em] transition-colors duration-300 ${
+                                    className={`px-3 py-1.5 text-sm transition-colors duration-200 ${
                                         active
-                                            ? "bg-ink text-paper border-ink"
-                                            : "bg-transparent text-ink border-ink/30 hover:border-ink"
+                                            ? "bg-ink text-paper"
+                                            : "text-graphite hover:text-ink"
                                     }`}
                                 >
                                     {r}
@@ -57,83 +52,62 @@ export const NewsFeed = () => {
                         })}
                     </div>
                 </div>
-            </div>
 
-            {/* Feed */}
-            <ul data-testid="news-list" className="divide-y divide-ink/15">
-                {filtered.map((n, idx) => (
-                    <li
-                        key={n.id}
-                        data-testid={`news-item-${n.id}`}
-                        className="group grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 px-6 sm:px-10 lg:px-14 py-10 hover:bg-cream/60 transition-colors duration-300"
-                    >
-                        <div className="lg:col-span-1 font-serif text-2xl text-graphite">
-                            {String(idx + 1).padStart(2, "0")}
-                        </div>
-
-                        <div className="lg:col-span-2 flex flex-col gap-2">
-                            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-terracotta">
-                                {n.category}
-                            </span>
-                            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                                {n.country} · {n.city}
-                            </span>
-                            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                                {n.date}
-                            </span>
-                        </div>
-
-                        <div
-                            className={`${
-                                n.image ? "lg:col-span-6" : "lg:col-span-9"
-                            } flex flex-col justify-center`}
-                        >
-                            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl leading-[1.05] tracking-tight text-ink group-hover:text-terracotta transition-colors duration-300">
-                                {n.headline}
-                            </h3>
-                            <p className="mt-4 font-sans text-base font-light text-graphite leading-relaxed max-w-2xl">
-                                {n.excerpt}
-                            </p>
-                            <span className="mt-4 font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                                By {n.author}
-                            </span>
-                        </div>
-
-                        {n.image && (
-                            <div className="lg:col-span-3 order-first lg:order-last">
-                                <div className="aspect-[4/3] overflow-hidden bg-cream">
-                                    <img
-                                        src={n.image}
-                                        alt={n.headline}
-                                        className="w-full h-full object-cover grayscale-hover"
-                                    />
-                                </div>
-                            </div>
-                        )}
-                    </li>
-                ))}
-
-                {filtered.length === 0 && (
-                    <li
-                        data-testid="news-empty"
-                        className="px-6 sm:px-10 lg:px-14 py-16 text-center font-mono text-xs uppercase tracking-[0.22em] text-graphite"
-                    >
-                        No dispatches from this region yet — check back on Sunday.
-                    </li>
-                )}
-            </ul>
-
-            <div className="px-6 sm:px-10 lg:px-14 py-10 flex items-center justify-between border-t border-ink/15">
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                    Showing {filtered.length} of {NEWS.length} dispatches
-                </span>
-                <a
-                    href="#archive"
-                    data-testid="news-view-archive"
-                    className="editorial-link font-mono text-[11px] uppercase tracking-[0.22em] text-ink"
+                {/* Feed */}
+                <ul
+                    data-testid="news-list"
+                    className="divide-y divide-ink/10 border-t border-ink/10"
                 >
-                    View the full archive →
-                </a>
+                    {filtered.map((n) => (
+                        <li
+                            key={n.id}
+                            data-testid={`news-item-${n.id}`}
+                            className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-8"
+                        >
+                            <div className="md:col-span-2 flex flex-col text-sm text-mute">
+                                <span>{n.date}</span>
+                                <span className="mt-1 text-graphite">
+                                    {n.country}
+                                </span>
+                            </div>
+
+                            <div className="md:col-span-7">
+                                <h3 className="font-serif text-xl sm:text-2xl leading-snug tracking-tight text-ink group-hover:text-terracotta transition-colors duration-300 font-normal">
+                                    {n.headline}
+                                </h3>
+                                <p className="mt-3 text-base text-graphite leading-relaxed max-w-2xl">
+                                    {n.excerpt}
+                                </p>
+                            </div>
+
+                            <div className="md:col-span-3 text-sm text-mute md:text-right">
+                                {n.category}
+                            </div>
+                        </li>
+                    ))}
+
+                    {filtered.length === 0 && (
+                        <li
+                            data-testid="news-empty"
+                            className="py-16 text-center text-sm text-mute"
+                        >
+                            No dispatches from this region yet.
+                        </li>
+                    )}
+                </ul>
+
+                <div className="mt-8 flex items-center justify-between text-sm text-mute">
+                    <span>
+                        {filtered.length} of {NEWS.length} stories
+                    </span>
+                    <a
+                        href="#archive"
+                        data-testid="news-view-archive"
+                        className="editorial-link text-ink"
+                    >
+                        View full archive
+                    </a>
+                </div>
             </div>
         </section>
     );

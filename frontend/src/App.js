@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 
 import Header from "./components/site/Header";
-import Ticker from "./components/site/Ticker";
 import Hero from "./components/site/Hero";
 import NewsFeed from "./components/site/NewsFeed";
 import CitySpotlight from "./components/site/CitySpotlight";
@@ -16,10 +15,9 @@ const Home = () => {
     return (
         <div
             data-testid="home-page"
-            className="paper-grain min-h-screen bg-paper text-ink"
+            className="min-h-screen bg-paper text-ink"
         >
             <Header />
-            <Ticker />
             <main data-testid="main-content">
                 <Hero />
                 <NewsFeed />
@@ -32,14 +30,12 @@ const Home = () => {
                 position="bottom-right"
                 toastOptions={{
                     style: {
-                        background: "#1C1B1A",
-                        color: "#F4F3EF",
-                        border: "1px solid #1C1B1A",
+                        background: "#17161A",
+                        color: "#F6F5F1",
+                        border: "1px solid #17161A",
                         borderRadius: 0,
-                        fontFamily: "'IBM Plex Mono', monospace",
-                        fontSize: "12px",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.14em",
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        fontSize: "13px",
                     },
                 }}
             />

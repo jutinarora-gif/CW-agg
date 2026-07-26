@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,53 +7,24 @@
 html,
 body {
     margin: 0;
-    background-color: #f4f3ef;
-    color: #1c1b1a;
+    background-color: #f6f5f1;
+    color: #17161a;
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: 300;
 }
 
 ::selection {
-    background-color: #1c1b1a;
-    color: #f4f3ef;
-}
-
-/* Paper grain texture overlay */
-.paper-grain {
-    position: relative;
-}
-.paper-grain::before {
-    content: '';
-    pointer-events: none;
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    opacity: 0.04;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-
-/* Ticker marquee */
-@keyframes ticker {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-.ticker-track {
-    animation: ticker 60s linear infinite;
-    will-change: transform;
+    background-color: #17161a;
+    color: #f6f5f1;
 }
 
 /* Section entrance */
 @keyframes rise {
     from {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -61,54 +32,61 @@ body {
     }
 }
 .rise-in {
-    animation: rise 0.9s ease-out both;
+    animation: rise 0.8s ease-out both;
 }
 
 /* Editorial link underline */
 .editorial-link {
-    background-image: linear-gradient(#1c1b1a, #1c1b1a);
-    background-size: 0% 1px;
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    transition:
-        background-size 400ms ease-in-out,
-        color 300ms ease;
+    position: relative;
+    color: #17161a;
+    transition: color 240ms ease;
 }
-.editorial-link:hover {
-    background-size: 100% 1px;
-    color: #a64b2a;
+.editorial-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 320ms ease;
+}
+.editorial-link:hover::after {
+    transform: scaleX(1);
 }
 
 /* Hover-color images */
 .grayscale-hover {
-    filter: grayscale(100%) contrast(1.05);
+    filter: grayscale(100%);
     transition: filter 700ms ease-out;
 }
 .grayscale-hover:hover {
-    filter: grayscale(0%) contrast(1);
+    filter: grayscale(0%);
 }
 
 @layer base {
     :root {
-        --background: 44 20% 95%;
-        --foreground: 30 5% 11%;
-        --card: 44 20% 95%;
-        --card-foreground: 30 5% 11%;
-        --popover: 44 20% 95%;
-        --popover-foreground: 30 5% 11%;
-        --primary: 30 5% 11%;
-        --primary-foreground: 44 20% 95%;
-        --secondary: 40 12% 90%;
-        --secondary-foreground: 30 5% 11%;
-        --muted: 40 12% 90%;
-        --muted-foreground: 30 5% 30%;
-        --accent: 15 59% 41%;
-        --accent-foreground: 44 20% 95%;
+        --background: 44 22% 96%;
+        --foreground: 240 6% 10%;
+        --card: 44 22% 96%;
+        --card-foreground: 240 6% 10%;
+        --popover: 44 22% 96%;
+        --popover-foreground: 240 6% 10%;
+        --primary: 240 6% 10%;
+        --primary-foreground: 44 22% 96%;
+        --secondary: 40 14% 92%;
+        --secondary-foreground: 240 6% 10%;
+        --muted: 40 14% 92%;
+        --muted-foreground: 240 6% 35%;
+        --accent: 15 45% 40%;
+        --accent-foreground: 44 22% 96%;
         --destructive: 0 62% 40%;
-        --destructive-foreground: 44 20% 95%;
-        --border: 30 5% 11% / 0.15;
-        --input: 30 5% 11% / 0.15;
-        --ring: 30 5% 11%;
+        --destructive-foreground: 44 22% 96%;
+        --border: 240 6% 10% / 0.12;
+        --input: 240 6% 10% / 0.12;
+        --ring: 240 6% 10%;
         --radius: 0rem;
     }
 }

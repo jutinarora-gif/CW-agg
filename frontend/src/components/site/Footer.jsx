@@ -2,27 +2,20 @@ import React from "react";
 
 export const Footer = () => {
     return (
-        <footer
-            data-testid="site-footer"
-            className="bg-paper text-ink"
-        >
-            <div className="grid grid-cols-2 lg:grid-cols-12 border-b border-ink/15">
-                <div className="col-span-2 lg:col-span-5 px-6 sm:px-10 lg:px-14 py-14 lg:border-r border-ink/15">
-                    <span className="font-serif text-5xl leading-none tracking-tight">
+        <footer data-testid="site-footer" className="bg-paper text-ink">
+            <div className="max-w-[1400px] mx-auto px-6 sm:px-10 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="col-span-2 md:col-span-1">
+                    <span className="font-serif text-2xl leading-none tracking-tight">
                         Meridian
                     </span>
-                    <p className="mt-4 max-w-md font-sans text-base font-light text-graphite leading-relaxed">
-                        An independent editorial dispatch on coworking, cities,
-                        and the borderless life. Published weekly from wherever
-                        the light is best.
+                    <p className="mt-3 text-sm text-graphite leading-relaxed max-w-xs">
+                        An independent dispatch on coworking, cities and the borderless life.
                     </p>
                 </div>
 
-                <div className="col-span-1 lg:col-span-2 px-6 sm:px-10 py-14 border-r border-ink/15">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                        Sections
-                    </span>
-                    <ul className="mt-5 space-y-3 font-serif text-lg">
+                <div>
+                    <span className="text-sm text-mute">Sections</span>
+                    <ul className="mt-4 space-y-2 text-sm">
                         <li>
                             <a
                                 href="#news"
@@ -38,7 +31,7 @@ export const Footer = () => {
                                 className="editorial-link"
                                 data-testid="footer-link-cities"
                             >
-                                City Files
+                                Cities
                             </a>
                         </li>
                         <li>
@@ -47,48 +40,35 @@ export const Footer = () => {
                                 className="editorial-link"
                                 data-testid="footer-link-tips"
                             >
-                                Field Notes
+                                Field notes
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <div className="col-span-1 lg:col-span-2 px-6 sm:px-10 py-14 lg:border-r border-ink/15">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                        The Paper
-                    </span>
-                    <ul className="mt-5 space-y-3 font-serif text-lg">
-                        <li>
-                            <a href="#about" className="editorial-link">About</a>
-                        </li>
-                        <li>
-                            <a href="#masthead" className="editorial-link">Masthead</a>
-                        </li>
-                        <li>
-                            <a href="#letters" className="editorial-link">Letters</a>
-                        </li>
+                <div>
+                    <span className="text-sm text-mute">The Paper</span>
+                    <ul className="mt-4 space-y-2 text-sm">
+                        <li><a href="#about" className="editorial-link">About</a></li>
+                        <li><a href="#masthead" className="editorial-link">Masthead</a></li>
+                        <li><a href="#letters" className="editorial-link">Letters</a></li>
                     </ul>
                 </div>
 
-                <div className="col-span-2 lg:col-span-3 px-6 sm:px-10 lg:px-14 py-14">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                        Correspond
-                    </span>
-                    <ul className="mt-5 space-y-3 font-serif text-lg">
+                <div>
+                    <span className="text-sm text-mute">Contact</span>
+                    <ul className="mt-4 space-y-2 text-sm text-graphite">
                         <li>letters@meridian.press</li>
-                        <li>press@meridian.press</li>
                         <li>@meridian.dispatch</li>
                     </ul>
                 </div>
             </div>
 
-            <div className="px-6 sm:px-10 lg:px-14 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                    © 2026 Meridian Editions · All dispatches original
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite">
-                    Set in Cormorant Garamond & IBM Plex · Printed nowhere
-                </span>
+            <div className="border-t border-ink/10">
+                <div className="max-w-[1400px] mx-auto px-6 sm:px-10 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-mute">
+                    <span>© 2026 Meridian Editions</span>
+                    <span>Set in Fraunces & IBM Plex Sans</span>
+                </div>
             </div>
         </footer>
     );

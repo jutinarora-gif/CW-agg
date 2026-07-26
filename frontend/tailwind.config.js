@@ -9,8 +9,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['IBM Plex Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                serif: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
-                mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+                serif: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -18,12 +17,12 @@ module.exports = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             colors: {
-                paper: '#F4F3EF',
-                cream: '#EAE8E1',
-                ink: '#1C1B1A',
-                graphite: '#4A4843',
-                terracotta: '#A64B2A',
-                'terracotta-dark': '#8A3C1F',
+                paper: '#F6F5F1',
+                cream: '#EEECE4',
+                ink: '#17161A',
+                graphite: '#57555C',
+                mute: '#8A878E',
+                terracotta: '#95452A',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {
@@ -40,7 +39,6 @@ module.exports = {
                 },
                 secondary: {
                     DEFAULT: 'hsl(var(--secondary))',
-                    secondary: 'hsl(var(--secondary-foreground))',
                     foreground: 'hsl(var(--secondary-foreground))',
                 },
                 muted: {

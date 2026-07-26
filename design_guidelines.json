@@ -1,0 +1,136 @@
+{
+  "theme": "light",
+  "project_type": "editorial_magazine_aggregator",
+  "typography": {
+    "fonts": {
+      "heading": "Cormorant Garamond",
+      "body": "IBM Plex Sans",
+      "mono_accent": "IBM Plex Mono"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-none text-foreground",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight leading-none",
+      "h3": "text-2xl sm:text-3xl font-medium tracking-tight",
+      "h4": "text-lg sm:text-xl font-semibold",
+      "body": "text-base sm:text-lg leading-relaxed font-light",
+      "labels": "font-mono text-xs uppercase tracking-[0.2em] font-medium text-foreground/70"
+    },
+    "installation_instructions": "Add Google Fonts imports in index.css: @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap'); Apply to tailwind config."
+  },
+  "colors": {
+    "background": {
+      "primary": "#F4F3EF",
+      "secondary": "#EAE8E1",
+      "inverse": "#1C1B1A"
+    },
+    "text": {
+      "primary": "#1C1B1A",
+      "secondary": "#4A4843",
+      "inverse": "#F4F3EF"
+    },
+    "border": {
+      "subtle": "rgba(28, 27, 26, 0.15)",
+      "strong": "rgba(28, 27, 26, 1)"
+    },
+    "accent": {
+      "primary": "#A64B2A",
+      "hover": "#8A3C1F"
+    }
+  },
+  "visual_enhancers": {
+    "borders": "Expose the skeleton. Use 1px solid borders (border-black/15) to separate sections, articles, and grid columns. This mimics print newspaper layouts.",
+    "border_radius": "rounded-none everywhere. Sharp corners enforce the print editorial aesthetic.",
+    "shadows": "No soft drop shadows. Use 1px solid borders or hard offset shadows (e.g., 4px 4px 0px #1C1B1A) for interactive elements if necessary, but prefer flat design.",
+    "textures": "Apply a very subtle noise overlay to the background to simulate paper grain. This can be an SVG filter or a tiny repeatable noise PNG with opacity 0.03."
+  },
+  "layouts": {
+    "spacing": "Generous Spacing Philosophy. Sections should have massive padding (py-24 or py-32). Inner gaps should contrast heavily (either very wide gap-16 or tight 1px borders with zero gap).",
+    "grids": "Use 'The Swiss Grid' approach. 12-column grid. Do not center everything; use asymmetry. E.g., Hero text spans 7 columns, image spans 5.",
+    "sections": {
+      "header": "Sticky nav with solid background (bg-[#F4F3EF]) and bottom border. Do not use transparent backgrounds.",
+      "hero": "Split layout. Left: Massive H1 and a mono-spaced dateline. Right: Editorial photo. Separated by a vertical border.",
+      "news_feed": "List format, not cards. Title, snippet, and metadata (country/category). Each item separated by a horizontal border (border-b border-black/15).",
+      "city_spotlight": "Grid of tall, portrait-oriented images (aspect-[3/4]). Text tightly aligned underneath. Images should be black-and-white by default, turning full color on hover.",
+      "remote_work_tips": "A smaller bento box or columned text section mimicking a magazine's 'back page' or advice column."
+    }
+  },
+  "motion": {
+    "interactions": "Keep it classy and minimal. No bouncy animations.",
+    "hover_states": "Images: Convert from grayscale to full color. Text: Underline expands or color shifts to terracotta. Buttons: Invert background and text color.",
+    "transitions": "Use specific properties: transition-colors duration-300 ease-in-out or transition-[filter] duration-500 ease-out."
+  },
+  "accessibility": {
+    "contrast": "Text contrast is extremely high (dark charcoal on off-white). Hover states must maintain readability.",
+    "focus": "focus:outline-none focus:ring-1 focus:ring-black focus:ring-offset-2 focus:ring-offset-[#F4F3EF]"
+  },
+  "image_urls": [
+    {
+      "category": "Hero Featured Story",
+      "description": "Elegant woman working in a high-end coworking space",
+      "url": "https://images.unsplash.com/photo-1604328727766-a151d1045ab4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxlbGVnYW50JTIwY293b3JraW5nJTIwc3BhY2V8ZW58MHx8fHwxNzg1MDMzMjUyfDA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "category": "City Spotlight - Bali",
+      "description": "Lush vibrant rice terraces",
+      "url": "https://images.pexels.com/photos/35428411/pexels-photo-35428411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "category": "City Spotlight - Lisbon",
+      "description": "Classic yellow tram on a sunny Lisbon street",
+      "url": "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxsaXNib24lMjBzdHJlZXQlMjB0cmFtfGVufDB8fHx8MTc4NTAzMzI1Mnww&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "category": "City Spotlight - Mexico City",
+      "description": "Dramatic nighttime skyline of Mexico City",
+      "url": "https://images.pexels.com/photos/18399439/pexels-photo-18399439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "category": "City Spotlight - Berlin",
+      "description": "Berlin TV Tower at sunset",
+      "url": "https://images.pexels.com/photos/23230551/pexels-photo-23230551.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "category": "City Spotlight - Chiang Mai",
+      "description": "Traditional temple architecture in Chiang Mai",
+      "url": "https://images.unsplash.com/photo-1599576838688-8a6c11263108?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxjaGlhbmclMjBtYWklMjB0ZW1wbGV8ZW58MHx8fHwxNzg1MDMzMjUyfDA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "category": "City Spotlight - Medellín",
+      "description": "Vibrant street view and urban layout of Medellin",
+      "url": "https://images.pexels.com/photos/16637442/pexels-photo-16637442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "category": "News Feed Thumbnail 1",
+      "description": "Close up of hands typing on laptop in cafe",
+      "url": "https://images.pexels.com/photos/3747120/pexels-photo-3747120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+      "category": "News Feed Thumbnail 2",
+      "description": "Woman in black blazer working at table",
+      "url": "https://images.unsplash.com/photo-1603464021578-f327592a89de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxsYXB0b3AlMjBjb2ZmZWUlMjB3b3JraW5nfGVufDB8fHx8MTc4NTAzMzI1Mnww&ixlib=rb-4.1.0&q=85"
+    }
+  ],
+  "component_path": "frontend/src/components/ui",
+  "instructions_to_main_agent": [
+    "Use pure HTML and Tailwind CSS for layouts. Avoid using pre-built Shadcn UI layout components (like Cards) for the main structure, as they enforce rounded corners and shadows that break the print editorial aesthetic.",
+    "If using Javascript components (.js/.jsx format), ensure they follow the design system precisely. Do NOT use .tsx files as the project environment expects Javascript.",
+    "Implement the 'Swiss Grid' pattern by utilizing 'border-collapse' on containers and applying 'border-b' or 'border-r' utilities to grid items to draw literal lines between content.",
+    "Never use the Inter font. Strictly adhere to Cormorant Garamond for headings and IBM Plex for body/metadata.",
+    "All navigation and dropdown elements must have a solid background color (e.g. bg-[#F4F3EF]). Transparent headers over scrolling content are forbidden.",
+    "Images should ideally lack rounded corners (rounded-none). The aesthetic is strict print magazine, not modern SaaS.",
+    "Add the following to index.css to implement the font family: @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');",
+    "Update tailwind.config.js to extend the font families: { sans: ['IBM Plex Sans', 'sans-serif'], serif: ['Cormorant Garamond', 'serif'], mono: ['IBM Plex Mono', 'monospace'] }."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "You MUST NOT apply universal transition (e.g. 'transition: all').",
+    "You MUST NOT center align the app container, i.e., do not add '.App { text-align: center; }' in the css file.",
+    "Never use placeholder URLs (via.placeholder.com). Use the URLs provided in the image_urls array."
+  ],
+  "test_attributes": [
+    "All interactive elements MUST include a data-testid attribute in kebab-case representing their role.",
+    "Examples: data-testid='nav-link-cities', data-testid='news-filter-button', data-testid='hero-read-more-button'"
+  ]
+}
